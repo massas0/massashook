@@ -20,7 +20,7 @@ void __stdcall CHLCreateMove(int sequence_number, float input_sample_frametime, 
 		static auto ofunc = hooks::client.get_original<create_move_t>(21);
 		ofunc(g_CHLClient, sequence_number, input_sample_frametime, active);
 		C_BaseEntity *local = g_EntityList->GetClientEntity(g_Engine->GetLocalPlayer());
-		CInput::CUserCmd *cmd = g_Input->GetUserCmd(0, sequence_number);
+		CInput::CUserCmd *cmd = nullptr;
 		if (!cmd)
 			return;
 
